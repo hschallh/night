@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3-Celestial Star Map</title>
+    <script type="text/javascript" src="d3.min.js"></script>
+    <script type="text/javascript" src="d3.geo.projection.min.js"></script>
+    <script type="text/javascript" src="celestial.min.js"></script>
+    <link rel="stylesheet" href="celestial.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        var config = {
+            projection: "airy",
+            transform: "equatorial",
+            center: [35.7405109, -78.7838697, 0],
+            background: {
+                fill: "rgb(0, 54, 63)",
+                stroke: "#fff",
+                opacity: 1
+            },
+            adaptable: true,
+            interactive: false,
+            form: false,
+            location: false,
+            controls: false,
+            container: "celestial-map",
+            datapath: "data/",
+            stars: {
+                show: true,
+                limit: 6,
+                colors: false,
+                style: {
+                    fill: "#ffffff",
+                    opacity: 1
+                },
+                names: false,
+                size: 7,
+                exponent: -0.28,
+                data: 'stars.6.json'
+            },
+            dsos: {
+                show: false,
+            },
+            constellations: {
+                names: false,
+                lines: true,
+                linestyle: {
+                    stroke: "#cccccc",
+                    width: 1,
+                    opacity: 0.6
+                }
+            },
+            mw: {
+                show: true,
+                style: {
+                    fill: "#ffffff",
+                    opacity: "0.15"
+                }
+            },
+            lines: {
+                graticule: {
+                    show: false
+                }, // Show graticule lines
+                equatorial: {
+                    show: false
+                }, // Show equatorial plane
+                ecliptic: {
+                    show: false
+                }
+            }
+        };
+        Celestial.display(config);
+        Celestial.date(new Date(2017, 7, 23, 15, 0));
+    </script>
+</body>
+
+</html>
