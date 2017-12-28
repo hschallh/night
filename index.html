@@ -6,6 +6,7 @@
     <script type="text/javascript" src="d3.min.js"></script>
     <script type="text/javascript" src="d3.geo.projection.min.js"></script>
     <script type="text/javascript" src="celestial.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="celestial.css">
 </head>
 
@@ -18,7 +19,6 @@
         var config = {
             projection: "airy",
             transform: "equatorial",
-            center: [35.7405109, -78.7838697, 0],
             background: {
                 fill: "rgb(0, 54, 63)",
                 stroke: "#fff",
@@ -65,7 +65,10 @@
             },
             lines: {
                 graticule: {
-                    show: false
+                    show: true,
+                    stroke: "#cccccc",
+                    width: 1,
+                    opacity: 0.6
                 }, // Show graticule lines
                 equatorial: {
                     show: false
@@ -77,6 +80,8 @@
         };
         Celestial.display(config);
         Celestial.date(new Date(2017, 7, 23, 15, 0));
+        $("#lat").val(35.7405109);
+        $("#lon").val(-78.7838697);
     </script>
 </body>
 
