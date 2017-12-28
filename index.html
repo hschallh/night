@@ -20,7 +20,7 @@
             projection: "airy",
             transform: "equatorial",
             background: {
-                fill: "rgb(0, 54, 63)",
+                fill: "#000030",
                 stroke: "#fff",
                 opacity: 1
             },
@@ -41,7 +41,7 @@
                 },
                 names: false,
                 size: 7,
-                exponent: -0.28,
+                exponent: -0.3,
                 data: 'stars.6.json'
             },
             dsos: {
@@ -51,9 +51,9 @@
                 names: false,
                 lines: true,
                 linestyle: {
-                    stroke: "#cccccc",
+                    stroke: "#ffffff",
                     width: 1,
-                    opacity: 1
+                    opacity: .5
                 }
             },
             mw: {
@@ -66,9 +66,9 @@
             lines: {
                 graticule: {
                     show: true,
-                    stroke: "#cccccc",
+                    stroke: "#aaaaaa",
                     width: 1,
-                    opacity: 0.6
+                    opacity: 0.4
                 }, // Show graticule lines
                 equatorial: {
                     show: false
@@ -79,7 +79,7 @@
             }
         };
         Celestial.display(config);
-        Celestial.date(new Date(2017, 7, 23, 15, 0));
+        Celestial.date(new Date(2017, 7, 23, 14, 7));
         $("#lat").val(35.7405109);
         $("#lon").val(-78.7838697);
     </script>
